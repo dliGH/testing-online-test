@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>A Test Test</title>
+<meta name="author" content="Derek Li modified code of original author Em Zhan">
+<meta name="description" content=
+"A test test">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<main id="test">
+<form method="get">
+
+<h1>A Test Test</h1>
+<hr>
+
+<!-- Heading 1 / Part 1 -->
+
+<h2>I. Test heading</h2>
+<ol>
+<li>
+
+<p>Short answer test</p>
+<label>Answer: <input type="text" name="ans"></label></li>
+<li>
+
+<p> Multiple choice test</p>
+<input type="radio" name="ans" value="Red">Red<br>
+<input type="radio" name="ans" value="Blue" checked>Blue<br>
+<input type="radio" name="ans" value="Yellow">Yellow
+</ol>
+
+<!-- Heading 2 / Part 2 -->
+
+<hr>
+<h2>II. Test heading 2</h2>
+<ol start="17">
+<li>
+
+<p>Multiple guess test </p>
+<input type="checkbox" name="ans" value="Dog"> Dog<br>
+<input type="checkbox" name="ans" value="Cat"> Cat<br>
+<input type="checkbox" name="ans" value="Bird"> Bird<br>
+<input type="checkbox" name="ans" value="Mouse"> Mouse<br>
+<input type="checkbox" name="ans" value="Hamster"> Hamster<br>
+<input type="checkbox" name="ans" value="Alligator"> Alligator<br>
+<input type="checkbox" name="ans" value="Other"> Other
+<li>
+
+<p>Picture test</p>
+<img src="./assets/test.png" alt="a headphone jack" width="300">
+<label>Answer: <input type="text" name="ans"> test</label></li>
+<li>
+
+<p>Gif test</p>
+<img src="./assets/test.gif" alt="test gif" width="500">
+<label>Answer: <input type="text" name="ans"> test</label></li>
+</ol>
+
+<!-- Heading 3 / Part 3 -->
+
+<hr>
+<h2>III. Test Heading 3</h2>
+<ol start="49">
+<li>
+
+<p>Audio test</p>
+<audio controls="" src="./assets/test.mp3"></audio> <label>Answer:
+<input type="text" name="ans"></label></li>
+</ol>
+
+
+<hr>
+<h2>Competitor info</h2>
+<ol type="i">
+<li>
+<p>What is your name?</p>
+<label><input type="text" name="names"> (your name or
+names)</label></li>
+<li>
+<p>What is your team number?</p>
+<label><input type="text" name="team"> (your team
+number)</label></li>
+<li>
+<p>Are you sure you want to submit this test?</p>
+<input type="submit" value="Yes"></li>
+</ol>
+</form>
+
+<!--ending page-->
+
+</main>
+<section id="thanks">
+<h1>Thanks for taking this test!</h1>
+<hr>
+<p>If you have reached this page by accident, return to the test by
+clicking the back button in your browser.</p>
+<p>To finish submitting, copy the following URL and send it to your
+test proctor:</p>
+<textarea id="textarea" readonly></textarea>
+<p>Please consider giving test feedback here:</p>
+</section>
+
+<script>
+const url = document.URL;
+const test = document.getElementById("test");
+const thanks = document.getElementById("thanks");
+const textarea = document.getElementById("textarea");
+
+if (url.includes("?")) {
+  test.style.display = "none";
+  thanks.style.display = "block";
+  textarea.value = url;
+}
+</script>
+</body>
+</html>
